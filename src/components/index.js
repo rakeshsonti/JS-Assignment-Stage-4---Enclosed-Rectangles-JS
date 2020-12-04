@@ -34,7 +34,7 @@ function relative(rec1, rec2){
 	let obj2 = getCoordinates(rec2);
 
 	const res = {
-		children: []
+		children: rec2.children
 	}
 
 	if(rec2.top)
@@ -52,19 +52,14 @@ function relative(rec1, rec2){
 	
 	return res;
 }
-
+const T=0;
+const W=0;
 function getCoordinates(rect){
-	let x1, y1, x2, y2;
-	x1 = rect.top ? parseInt(rect.top) : -(parseInt(rect.height) + parseInt(rect.bottom));
-	y1 = rect.left ? parseInt(rect.left) : -(parseInt(rect.width) + parseInt(rect.right));
-
-	x2 = rect.bottom ? parseInt(rect.bottom) : (parseInt(rect.height) + parseInt(rect.top));
-	y2 = rect.right ? parseInt(rect.right) : (parseInt(rect.width) + parseInt(rect.left));
-
-	return {x1: x1,
-		   y1: y1,
-		   x2: x2 ,
-		   y2: y2};
+	return {
+	x1 = rect.top ? parseInt(rect.top) :(T -(parseInt(rect.height) + parseInt(rect.bottom))),
+	y1 = rect.left ? parseInt(rect.left) :(W -(parseInt(rect.width) + parseInt(rect.right))),
+	x2 = rect.bottom ?(T- parseInt(rect.bottom)) : (parseInt(rect.height) + parseInt(rect.top)),
+	y2 = rect.right ?(W- parseInt(rect.right)) : (parseInt(rect.width) + parseInt(rect.left))
 }
-
+	}
 module.exports = updateStructure;
