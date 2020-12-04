@@ -56,8 +56,8 @@ const T=0;
 const W=0;
 function getCoordinates(rect){
 	return {
-	x1 = rect.top ? parseInt(rect.top) :(T -(parseInt(rect.height) + parseInt(rect.bottom))),
-	y1 = rect.left ? parseInt(rect.left) :(W -(parseInt(rect.width) + parseInt(rect.right))),
+	x1 = rect.top ? parseInt(rect.top) :(T -((parseInt(rect.height) + parseInt(rect.bottom)))),
+	y1 = rect.left ? parseInt(rect.left) :(W -((parseInt(rect.width) + parseInt(rect.right)))),
 	x2 = rect.bottom ?(T- parseInt(rect.bottom)) : (parseInt(rect.height) + parseInt(rect.top)),
 	y2 = rect.right ?(W- parseInt(rect.right)) : (parseInt(rect.width) + parseInt(rect.left))
 }
